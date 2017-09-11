@@ -72,6 +72,10 @@ abstract class AbstractTag
         }
     }
 
+    public function handleInDefEnd()
+    {
+    }
+
     protected function before($attributes)
     {
     }
@@ -180,4 +184,4 @@ abstract class AbstractTag
             }
         }
     }
-} 
+}
