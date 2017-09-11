@@ -396,8 +396,14 @@ class Document extends AbstractTag
                 break;
         }
 
-        if (!$this->inDefs && $tag) {
+        if (!$tag) {
+            return;
+        }
+
+        if(!$this->inDefs) {
             $tag->handleEnd();
+        } else {
+            $tag->handleInDefEnd();
         }
     }
-} 
+}

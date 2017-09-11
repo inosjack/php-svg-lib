@@ -14,6 +14,14 @@ class StyleTag extends AbstractTag
 {
     protected $text = "";
 
+    public function handleInDefEnd()
+    {
+        if ($this->getDocument()->inDefs) {
+            $this->end();
+            $this->after();
+        }
+    }
+
     public function end()
     {
         $parser = new CSS\Parser($this->text);
@@ -24,4 +32,4 @@ class StyleTag extends AbstractTag
     {
         $this->text .= $text;
     }
-} 
+}
